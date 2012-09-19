@@ -1,4 +1,4 @@
-%define	major      	0
+%define	major		0
 
 %define libname		%mklibname %name %major
 %define libnamedev	%mklibname -d %name
@@ -6,7 +6,7 @@
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	0.9.14
+Version:	1.0.1
 Release:	%mkrel 1
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 URL:		http://opus-codec.org/
@@ -46,16 +46,16 @@ This package provides the library that implements the Opus codec.
 %install
 %makeinstall_std
 rm -f %buildroot//usr/share/doc/opus/doxygen-build.stamp
-rmdir %buildroot//usr/share/doc/opus
+rm -rf %buildroot//usr/share/doc/opus
 
 
 %files -n %{libname}
-%defattr(644,root,root,755)
-%doc COPYING README
 %{_libdir}/*.so.%{major}*
 
 %files -n %{libnamedev}
-%defattr(644,root,root,755)
+%doc COPYING README
 %{_includedir}/*
 %{_libdir}/*.so
+%{_mandir}/man3/*.xz
 %{_libdir}/pkgconfig/*.pc
+%{_datadir}/aclocal/opus.m4
