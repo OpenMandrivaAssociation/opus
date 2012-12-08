@@ -7,7 +7,7 @@
 Summary:	Opus Interactive Audio Codec
 Name:		opus
 Version:	1.0.1
-Release:	1
+Release:	%mkrel 1
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 URL:		http://opus-codec.org/
 License:	BSD
@@ -56,6 +56,6 @@ rm -rf %buildroot//usr/share/doc/opus
 %doc COPYING README
 %{_includedir}/*
 %{_libdir}/*.so
-%{_mandir}/man3/*.xz
+#% {_mandir}/man3/*.xz
 %{_libdir}/pkgconfig/*.pc
 %{_datadir}/aclocal/opus.m4
