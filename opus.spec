@@ -6,7 +6,7 @@
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 URL:		http://opus-codec.org/
@@ -45,8 +45,8 @@ This package provides the library that implements the Opus codec.
 
 %install
 %makeinstall_std
-rm -f %buildroot//usr/share/doc/opus/doxygen-build.stamp
-rm -rf %buildroot//usr/share/doc/opus
+rm -f %{buildroot}%{_docdir}/opus/doxygen-build.stamp
+rm -rf %{buildroot}%{_docdir}/opus
 
 
 %files -n %{libname}
