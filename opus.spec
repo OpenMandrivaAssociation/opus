@@ -4,7 +4,7 @@
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.0.3
+Version:	1.1
 Release:	1
 License:	BSD
 Group:		Sound
@@ -52,6 +52,7 @@ rm -rf %{buildroot}%{_docdir}/opus
 %files -n %{devname}
 %doc COPYING README
 %{_includedir}/*
+%{_mandir}/man3/%{name}*.*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 %{_datadir}/aclocal/opus.m4
