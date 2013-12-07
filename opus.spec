@@ -5,7 +5,7 @@
 Summary:	Opus Interactive Audio Codec
 Name:		opus
 Version:	1.1
-Release:	4
+Release:	5
 License:	BSD
 Group:		Sound
 Url:		http://opus-codec.org/
