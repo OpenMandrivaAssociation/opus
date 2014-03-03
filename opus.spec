@@ -30,6 +30,7 @@ technology from Skype's SILK codec and Xiph.Org's CELT codec.
 Summary:	Files needed to compile a program with Opus support
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel %{EVRD}
 
 %description -n	%{devname}
 This package provides the library that implements the Opus codec.
