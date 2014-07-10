@@ -1,11 +1,11 @@
 %define major 0
 %define libname %mklibname %{name} %{major}
-%define devname %mklibname %{name}
+%define devname %mklibname %{name} -d
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
 Version:	1.1
-Release:	7
+Release:	8
 License:	BSD
 Group:		Sound
 Url:		http://opus-codec.org/
