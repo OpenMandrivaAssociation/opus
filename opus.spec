@@ -5,7 +5,7 @@
 Summary:	Opus Interactive Audio Codec
 Name:		opus
 Version:	1.1
-Release:	9
+Release:	10
 License:	BSD
 Group:		Sound
 Url:		http://opus-codec.org/
@@ -48,6 +48,7 @@ This package provides the library that implements the Opus codec.
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 %{_datadir}/aclocal/opus.m4
+%{_mandir}/man3/opus_*.3*
 
 #----------------------------------------------------------------------------
 
@@ -55,7 +56,9 @@ This package provides the library that implements the Opus codec.
 %setup -q
 
 %build
-%configure2_5x --disable-static
+%configure2_5x \
+	--disable-static \
+	--enable-custom-modes
 %make
 
 %install
