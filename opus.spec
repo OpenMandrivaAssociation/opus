@@ -10,6 +10,7 @@ License:	BSD
 Group:		Sound
 Url:		http://opus-codec.org/
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
+BuildRequires:	doxygen
 
 %description
 The Opus codec is designed for interactive speech and audio transmission over
