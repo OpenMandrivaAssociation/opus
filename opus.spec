@@ -1,15 +1,22 @@
 %define major 0
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname %{name} -d
+# Set to alpha, beta, rc or %{nil} for stable
+%define pre beta
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.1
-Release:	10
+Version:	1.1.1
+%if "%{pre}" != ""
+Release:	0.%{pre}.1
+Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}-%{pre}.tar.gz
+%else
+Release:	1
+Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
+%endif
 License:	BSD
 Group:		Sound
 Url:		http://opus-codec.org/
-Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 BuildRequires:	doxygen
 
 %description
@@ -54,7 +61,11 @@ This package provides the library that implements the Opus codec.
 #----------------------------------------------------------------------------
 
 %prep
+%if "%{pre}" != ""
+%setup -qn %{name}-%{version}-%{pre}
+%else
 %setup -q
+%endif
 
 %build
 %configure2_5x \
