@@ -7,7 +7,7 @@
 Summary:	Opus Interactive Audio Codec
 Name:		opus
 Version:	1.0.3
-Release:	2
+Release:	2.1
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 URL:		http://opus-codec.org/
 License:	BSD
