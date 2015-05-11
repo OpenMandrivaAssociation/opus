@@ -1,17 +1,15 @@
-%define	major		0
-
-%define libname		%mklibname %name %major
-%define libnamedev	%mklibname -d %name
-
+%define	major	0
+%define libname	%mklibname %{name} %major
+%define devname	%mklibname -d %{name}
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.0.3
-Release:	2.1
-Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
-URL:		http://opus-codec.org/
+Version:	1.1
+Release:	1
 License:	BSD
 Group:		Sound
+Url:		http://opus-codec.org/
+Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 
 %description
 The Opus codec is designed for interactive speech and audio transmission over
@@ -28,12 +26,12 @@ The Opus codec is designed for interactive speech and audio transmission over
 the Internet. It is designed by the IETF Codec Working Group and incorporates
 technology from Skype's SILK codec and Xiph.Org's CELT codec. 
 
-%package -n	%{libnamedev}
+%package -n	%{devname}
 Summary:	Files needed to compile a program with Opus support
 Group:		Development/C
-Requires:	%{libname} = %version
+Requires:	%{libname} = %{version}-%{release}
 
-%description -n	%{libnamedev}
+%description -n	%{devname}
 This package provides the library that implements the Opus codec.
 
 %prep
@@ -48,14 +46,13 @@ This package provides the library that implements the Opus codec.
 rm -f %{buildroot}%{_docdir}/opus/doxygen-build.stamp
 rm -rf %{buildroot}%{_docdir}/opus
 
-
 %files -n %{libname}
-%{_libdir}/*.so.%{major}*
+%{_libdir}/libopus.so.%{major}*
 
-%files -n %{libnamedev}
+%files -n %{devname}
 %doc COPYING README
 %{_includedir}/*
 %{_libdir}/*.so
-#% {_mandir}/man3/*.xz
 %{_libdir}/pkgconfig/*.pc
 %{_datadir}/aclocal/opus.m4
+

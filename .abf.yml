@@ -1,4 +1,5 @@
 removed_sources:
   opus-1.0.1.tar.gz: 4d6358232606fbce80d9e63ed0d9b3b49fafb711
-sources:
   opus-1.0.2.tar.gz: 37dd3d69b10612cd513ccf26675ef6d61eda24b4
+sources:
+  opus-1.1.tar.gz: 35005f5549e2583f5770590135984dcfce6f3d58
