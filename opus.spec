@@ -2,11 +2,11 @@
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname %{name} -d
 # Set to alpha, beta, rc or %{nil} for stable
-%define pre beta
+%define pre %{nil}
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.1.1
+Version:	1.1.2
 %if "%{pre}" != ""
 Release:	0.%{pre}.1
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}-%{pre}.tar.gz
