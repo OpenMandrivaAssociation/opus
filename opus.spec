@@ -2,7 +2,7 @@
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname %{name} -d
 # Set to alpha, beta, rc or %{nil} for stable
-%define pre rc1
+%define pre %{nil}
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
