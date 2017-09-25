@@ -6,12 +6,12 @@
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.1.3
+Version:	1.2.1
 %if "%{pre}" != ""
 Release:	0.%{pre}.1
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}-%{pre}.tar.gz
 %else
-Release:	3
+Release:	1
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 %endif
 License:	BSD
