@@ -11,7 +11,7 @@ Version:	1.2.1
 Release:	0.%{pre}.1
 Source0:	http://archive.mozilla.org/pub/opus/%{name}-%{version}-%{pre}.tar.gz
 %else
-Release:	1
+Release:	2
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 %endif
 License:	BSD
