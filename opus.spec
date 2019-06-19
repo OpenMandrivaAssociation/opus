@@ -6,7 +6,7 @@
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.3
+Version:	1.3.1
 %if "%{pre}" != ""
 Release:	0.%{pre}.1
 Source0:	http://archive.mozilla.org/pub/opus/%{name}-%{version}-%{pre}.tar.gz
