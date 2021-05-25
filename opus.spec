@@ -12,6 +12,8 @@
 # Set to alpha, beta, rc or %{nil} for stable
 %define pre %{nil}
 
+%global optflags %optflags -O3
+
 Summary:	Opus Interactive Audio Codec
 Name:		opus
 Version:	1.3.1
@@ -19,12 +21,16 @@ Version:	1.3.1
 Release:	0.%{pre}.1
 Source0:	http://archive.mozilla.org/pub/opus/%{name}-%{version}-%{pre}.tar.gz
 %else
-Release:	4
+Release:	5
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 %endif
 License:	BSD
 Group:		Sound
 Url:		http://opus-codec.org/
+#(tpg) patches from Suse
+Patch0:     opus-Silk-CNG-adapts-faster.patch
+Patch1:     opus-Silk-fix-arm-optimization.patch
+Patch2:     opus-Fix-celt-decoder-assertion-when-using-OPUS_CUSTOM.patch
 BuildRequires:	doxygen
 
 %description
@@ -104,19 +110,26 @@ This package provides the library that implements the Opus codec.
 %autosetup -p1
 %endif
 
-export CONFIGURE_TOP="`pwd`"
+export CONFIGURE_TOP="$(pwd)"
 %if %{with compat32}
 mkdir build32
 cd build32
 %configure32 \
-	--enable-custom-modes
+	--enable-custom-modes \
+	--enable-hardening \
+	--enable-ambisonics \
+	--disable-doc
+
 cd ..
 %endif
 
 mkdir build
 cd build
 %configure \
-	--enable-custom-modes
+	--enable-custom-modes \
+	--enable-hardening \
+	--enable-ambisonics \
+	--disable-doc
 
 
 %build
@@ -130,5 +143,6 @@ cd build
 %make_install -C build32
 %endif
 %make_install -C build
-rm -f %{buildroot}%{_docdir}/opus/doxygen-build.stamp
-rm -rf %{buildroot}%{_docdir}/opus
+
+
+find %{buildroot} -type f -name "*.la" -delete
