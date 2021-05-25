@@ -70,7 +70,6 @@ This package provides the library that implements the Opus codec.
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 %{_datadir}/aclocal/opus.m4
-%{_mandir}/man3/opus_*.3*
 
 #----------------------------------------------------------------------------
 %if %{with compat32}
@@ -117,7 +116,6 @@ cd build32
 %configure32 \
 	--enable-custom-modes \
 	--enable-hardening \
-	--enable-ambisonics \
 	--disable-doc
 
 cd ..
@@ -128,7 +126,6 @@ cd build
 %configure \
 	--enable-custom-modes \
 	--enable-hardening \
-	--enable-ambisonics \
 	--disable-doc
 
 
