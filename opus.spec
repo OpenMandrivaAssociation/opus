@@ -16,7 +16,7 @@
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.3.1
+Version:	1.4
 %if "%{pre}" != ""
 Release:	0.%{pre}.1
 Source0:	http://archive.mozilla.org/pub/opus/%{name}-%{version}-%{pre}.tar.gz
@@ -27,10 +27,6 @@ Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 License:	BSD
 Group:		Sound
 Url:		http://opus-codec.org/
-#(tpg) patches from Suse
-Patch0:     opus-Silk-CNG-adapts-faster.patch
-Patch1:     opus-Silk-fix-arm-optimization.patch
-Patch2:     opus-Fix-celt-decoder-assertion-when-using-OPUS_CUSTOM.patch
 BuildRequires:	doxygen
 
 %description
