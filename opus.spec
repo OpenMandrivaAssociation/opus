@@ -5,9 +5,11 @@
 %endif
 
 %define major 0
-%define libname %mklibname %{name} %{major}
+%define oldlibname %mklibname %{name} 0
+%define libname %mklibname %{name}
 %define devname %mklibname %{name} -d
-%define lib32name %mklib32name %{name} %{major}
+%define oldlib32name %mklib32name %{name} 0
+%define lib32name %mklib32name %{name}
 %define dev32name %mklib32name %{name} -d
 # Set to alpha, beta, rc or %{nil} for stable
 %define pre %{nil}
@@ -16,7 +18,7 @@
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.4
+Version:	1.5.1
 %if "%{pre}" != ""
 Release:	0.%{pre}.1
 Source0:	http://archive.mozilla.org/pub/opus/%{name}-%{version}-%{pre}.tar.gz
@@ -39,6 +41,7 @@ technology from Skype's SILK codec and Xiph.Org's CELT codec.
 %package -n %{libname}
 Summary:	Opus shared library
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 This package provides the library that implements the Opus codec.
@@ -72,6 +75,7 @@ This package provides the library that implements the Opus codec.
 %package -n %{lib32name}
 Summary:	Opus shared library (32-bit)
 Group:		System/Libraries
+%rename %{oldlib32name}
 
 %description -n %{lib32name}
 This package provides the library that implements the Opus codec.
