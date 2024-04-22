@@ -18,12 +18,12 @@
 
 Summary:	Opus Interactive Audio Codec
 Name:		opus
-Version:	1.5.1
+Version:	1.5.2
 %if "%{pre}" != ""
 Release:	0.%{pre}.1
 Source0:	http://archive.mozilla.org/pub/opus/%{name}-%{version}-%{pre}.tar.gz
 %else
-Release:	6
+Release:	1
 Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 %endif
 License:	BSD
