@@ -28,7 +28,7 @@ Source0:	http://downloads.xiph.org/releases/opus/%{name}-%{version}.tar.gz
 %endif
 License:	BSD
 Group:		Sound
-Url:		http://opus-codec.org/
+Url:		https://opus-codec.org/
 BuildRequires:	doxygen
 
 %description
